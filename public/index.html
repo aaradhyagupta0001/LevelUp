@@ -7,21 +7,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
-    <h1>⚡ LevelUp</h1>
 
-    <form id="habitForm">
-      <input type="text" id="habitInput" placeholder="Add a new habit…" required>
-      <button type="submit">Add</button>
-    </form>
-
-    <ul id="habitList"></ul>
-
-    <div class="xp-bar">
-      <div id="xpFill"></div>
-    </div>
-    <p id="levelText">Level 1 — XP: 0</p>
+  <!-- Sidebar Tabs -->
+  <div class="sidebar">
+    <button data-tab="login">Login/SignUp</button>
+    <button data-tab="walk">Walk Steps</button>
+    <button data-tab="goals">Goals</button>
+    <button data-tab="exercise">Exercise</button>
   </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Welcome to LevelUp!</h1>
+    <p>Select a tab to start leveling up your habits.</p>
+  </div>
+
+  <!-- Particle Container -->
+  <div id="particle-container"></div>
 
   <script src="script.js"></script>
 </body>

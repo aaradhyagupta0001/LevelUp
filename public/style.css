@@ -1,74 +1,161 @@
-body {
-  background: linear-gradient(135deg, #1e1e2f, #27273f);
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding-top: 40px;
+/* ===== Full screen background ===== */
+html, body {
+  height: 100%;
+  width: 100%;
   margin: 0;
+  padding: 0;
+}
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.app {
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
+/* ===== Sidebar ===== */
+.sidebar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.sidebar button {
+  margin: 8px 0;
+  padding: 12px;
+  background: linear-gradient(135deg,#ff00ff,#00ffff);
+  color: #fff;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sidebar button:hover {
+  transform: translateX(10px) scale(1.05);
+  box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  margin-left: 140px;
   padding: 20px;
-  width: 320px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s ease;
 }
 
+/* ===== Neon headings ===== */
 h1 {
   text-align: center;
   margin-top: 0;
+  text-shadow: 0 0 10px #00ffdd, 0 0 20px #00ffdd, 0 0 30px #00ffdd;
 }
 
-form {
-  display: flex;
-  gap: 8px;
-}
-
-input {
-  flex: 1;
+/* ===== General Inputs and Buttons ===== */
+input[type="text"], input[type="password"], input[type="number"] {
   padding: 8px;
-  border: none;
+  margin: 4px 0;
   border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
 }
 
 button {
   padding: 8px 12px;
+  margin: 4px;
   border: none;
-  background: #00ff88;
-  color: #000;
   border-radius: 8px;
   cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff0, 0 0 40px #0ff;
+}
+
+/* ===== XP Bar ===== */
+.progress-container {
   margin-top: 20px;
-}
-
-li {
-  display: flex;
-  justify-content: space-between;
-  background: rgba(255,255,255,0.1);
-  margin-bottom: 8px;
-  padding: 8px;
-  border-radius: 8px;
 }
 
 .xp-bar {
+  width: 100%;
+  max-width: 300px;
   height: 16px;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
   border-radius: 8px;
-  margin-top: 20px;
 }
 
 #xpFill {
-  height: 16px;
+  height: 100%;
   width: 0%;
-  background: #00ff88;
+  background: linear-gradient(90deg,#00ff88,#00ffff,#ff00ff);
   border-radius: 8px;
+  transition: width 0.5s ease-in-out;
+}
+
+/* ===== Per-tab unique styling ===== */
+/* Login/SignUp */
+#username, #password {
+  text-shadow: 0 0 5px #0ff;
+}
+
+#loginBtn, #signupBtn {
+  background: linear-gradient(135deg,#ff0,#f0f);
+  color: #000;
+  box-shadow: 0 0 10px #ff0, 0 0 20px #f0f;
+}
+
+/* Walk Steps */
+#stepsMsg {
+  font-size: 1.2em;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0;
+}
+
+/* Goals */
+#goalList li {
+  padding: 8px;
+  margin: 4px 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg,#ff0,#f0f,#0ff);
+  color: #000;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+#goalList li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ff0, 0 0 20px #0ff;
+}
+
+/* Exercise */
+#exerciseList li {
+  padding: 8px;
+  margin: 4px 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg,#00f,#0ff,#ff0);
+  color: #000;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+#exerciseList li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00f, 0 0 20px #0ff;
+}
+
+/* ===== Particle container ===== */
+#particle-container {
+  position: absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:0;
 }
