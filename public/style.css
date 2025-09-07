@@ -56,7 +56,7 @@ h1 {
   text-shadow: 0 0 10px #00ffdd, 0 0 20px #00ffdd, 0 0 30px #00ffdd;
 }
 
-/* ===== General Inputs and Buttons ===== */
+/* ===== Inputs and Buttons ===== */
 input[type="text"], input[type="password"], input[type="number"] {
   padding: 8px;
   margin: 4px 0;
@@ -103,10 +103,7 @@ button:hover {
 
 /* ===== Per-tab unique styling ===== */
 /* Login/SignUp */
-#username, #password {
-  text-shadow: 0 0 5px #0ff;
-}
-
+#username, #password { text-shadow: 0 0 5px #0ff; }
 #loginBtn, #signupBtn {
   background: linear-gradient(135deg,#ff0,#f0f);
   color: #000;
@@ -159,3 +156,41 @@ button:hover {
   pointer-events:none;
   z-index:0;
 }
+html, body {height:100%;width:100%;margin:0;padding:0;}
+body {background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);font-family:'Segoe UI',sans-serif;color:#fff;position:relative;overflow-x:hidden;}
+
+/* Sidebar */
+.sidebar {position:fixed;top:50%;left:0;transform:translateY(-50%);display:flex;flex-direction:column;z-index:2;}
+.sidebar button {margin:8px 0;padding:12px;background:linear-gradient(135deg,#ff00ff,#00ffff);color:#fff;border:none;border-radius:8px 0 0 8px;cursor:pointer;transition: transform 0.3s, box-shadow 0.3s;}
+.sidebar button:hover {transform:translateX(10px) scale(1.05);box-shadow:0 0 15px #ff00ff,0 0 25px #00ffff;}
+
+/* Main Content */
+.main-content {margin-left:140px;padding:20px;position:relative;z-index:1;transition:all 0.5s ease;}
+h1 {text-align:center;margin-top:0;text-shadow:0 0 10px #00ffdd,0 0 20px #00ffdd,0 0 30px #00ffdd;}
+
+/* XP Bar */
+.xp-bar {width:100%;max-width:300px;height:16px;background:rgba(255,255,255,0.1);border-radius:8px;margin-top:20px;}
+#xpFill {height:100%;width:0%;background:linear-gradient(90deg,#00ff88,#00ffff,#ff00ff);border-radius:8px;transition:width 0.5s ease-in-out;}
+
+/* Floating XP numbers */
+.floating-xp {position:absolute;color:#0ff;font-weight:bold;text-shadow:0 0 10px #0ff;animation:floatXP 1s ease-out forwards;}
+@keyframes floatXP {0%{opacity:1;transform:translateY(0);}100%{opacity:0;transform:translateY(-50px);}}
+
+/* Achievement pop-ups */
+#achievement-container .achievement {position:fixed;top:20px;right:20px;background:#ff0;color:#000;padding:10px 15px;border-radius:10px;font-weight:bold;box-shadow:0 0 10px #ff0;animation:popUp 2s ease-out forwards;}
+@keyframes popUp {0%{opacity:0;transform:translateY(-20px);}10%{opacity:1;transform:translateY(0);}90%{opacity:1;transform:translateY(0);}100%{opacity:0;transform:translateY(-20px);}}
+
+/* Particle container */
+#particle-container {position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+
+/* Lists */
+ul {list-style:none;padding:0;}
+li {margin:4px 0;padding:8px;border-radius:8px;font-weight:bold;transition:transform 0.3s,box-shadow 0.3s;}
+#goalList li {background:linear-gradient(90deg,#ff0,#f0f,#0ff);color:#000;}
+#goalList li:hover {transform:scale(1.05);box-shadow:0 0 10px #ff0,0 0 20px #0ff;}
+#exerciseList li {background:linear-gradient(90deg,#00f,#0ff,#ff0);color:#000;}
+#exerciseList li:hover {transform:scale(1.05);box-shadow:0 0 10px #00f,0 0 20px #0ff;}
+
+input[type=text],input[type=password],input[type=number]{padding:8px;margin:4px 0;border-radius:8px;border:none;background:rgba(255,255,255,0.1);color:#fff;}
+button{padding:8px 12px;margin:4px;border:none;border-radius:8px;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;}
+button:hover{transform:scale(1.1);box-shadow:0 0 20px #ff0,0 0 40px #0ff;}
