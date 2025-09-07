@@ -1,0 +1,82 @@
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.xp-bar {
+  width: 80%;
+  background-color: #333;
+  border-radius: 10px;
+  height: 20px;
+  margin: 10px auto;
+  overflow: hidden;
+}
+
+.xp-fill {
+  background: linear-gradient(90deg, #00ff99, #00ccff);
+  height: 100%;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+.add-habit {
+  margin: 20px;
+}
+
+.add-habit input {
+  padding: 8px;
+  width: 200px;
+  border-radius: 6px;
+  border: none;
+}
+
+.add-habit button {
+  padding: 8px 12px;
+  margin-left: 5px;
+  background: #00ccff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+}
+
+.habits {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.habit-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.habit-card.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #00ff99;
+  min-height: 1.2em;
+  text-align: center;
+}

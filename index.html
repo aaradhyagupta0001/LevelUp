@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LevelUp - Habit Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>⚡ LevelUp</h1>
+    <div class="xp-bar">
+      <div class="xp-fill" id="xpFill"></div>
+    </div>
+    <p id="levelInfo">Level 1 — XP: 0</p>
+  </header>
+
+  <section class="add-habit">
+    <input type="text" id="habitInput" placeholder="Enter a new habit/quest" />
+    <button id="addHabitBtn">Add Habit</button>
+  </section>
+
+  <section id="habitList" class="habits"></section>
+
+  <div id="message" class="message"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
